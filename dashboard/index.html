@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" ng-app="app">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="../" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.30/angular-ui-router.min.js"></script>
+
+  <link rel="stylesheet" href="libs/angular-toastr.min.css" />
+  <script src="libs/angular-toastr.tpls.min.js"></script>
+
+  <link rel="stylesheet" href="dashboard/dashboard.css" />
+  <link rel="stylesheet" href="userManagment/userManagment.css" />
+
+  <script src="dashboard/dashboard.module.js"></script>
+  <script src="dashboard/dashboard.rout.js"></script>
+  <script src="dashboard/dashboard.service.js"></script>
+  <script src="dashboard/dashboard.controller.js"></script>
+
+  <script src="userManagment/userManagment.module.js"></script>
+  <script src="userManagment/userMnagment.controller.js"></script>
+  <script src="userManagment/userManagment.service.js"></script>
+  <script src="userManagment/userManagment.rout.js"></script>
+
+  <script src="app.js"></script>
+</head>
+<body>
+  <div ui-view></div>
+</body>
+</html>

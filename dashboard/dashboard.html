@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard UI</title>
+  <link rel="stylesheet" href="./dashboard.css" />
+  <script src="./dashboard.controller.js"></script>
+  <script src="./dashboard.service.js"></script>
+</head>
+<body>
+
+<div class="dash" id="dash">
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__brand">
+      <div class="brand">
+        <div class="brand__logo">IN</div>
+        <div class="brand__text">
+          <div class="brand__title">Dashboard</div>
+          <div class="brand__sub">Indu Admin</div>
+        </div>
+      </div>
+      <button class="icon-btn" id="toggleBtn" title="جمع/باز">☰</button>
+    </div>
+
+    <nav class="sidebar__nav">
+      <button class="nav-item is-active" data-page="home">
+        <span class="nav-item__icon">🏠</span>
+        <span class="nav-item__text">خانه</span>
+      </button>
+
+      <button class="nav-item" data-page="orders">
+        <span class="nav-item__icon">🧾</span>
+        <span class="nav-item__text">سفارش‌ها</span>
+        <span class="nav-item__badge" id="ordersBadge">7</span>
+      </button>
+
+      <button class="nav-item" data-page="products">
+        <span class="nav-item__icon">📦</span>
+        <span class="nav-item__text">محصولات</span>
+      </button>
+
+      <button class="nav-item" data-page="customers">
+        <span class="nav-item__icon">👥</span>
+        <span class="nav-item__text">مشتری‌ها</span>
+      </button>
+
+      <div class="nav-sep"></div>
+
+      <button class="nav-item" data-page="settings">
+        <span class="nav-item__icon">⚙️</span>
+        <span class="nav-item__text">تنظیمات</span>
+      </button>
+    </nav>
+
+    <div class="sidebar__footer">
+      <div class="user">
+        <div class="user__avatar">A</div>
+        <div class="user__info">
+          <div class="user__name">Amirhossein</div>
+          <div class="user__role">Admin</div>
+        </div>
+      </div>
+      <button class="btn btn--ghost" id="logoutBtn">خروج</button>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+    <!-- Topbar -->
+    <header class="topbar">
+      <div class="topbar__left">
+        <button class="icon-btn only-mobile" id="mobileToggle">☰</button>
+
+        <div class="page-title">
+          <div class="page-title__h" id="pageTitle">داشبورد</div>
+          <div class="page-title__sub" id="pageSubTitle">نمای کلی وضعیت سیستم</div>
+        </div>
+      </div>
+
+      <div class="topbar__right">
+        <div class="search">
+          <span class="search__icon">🔎</span>
+          <input class="search__input" type="text" placeholder="جستجو..." id="searchInput" />
+        </div>
+
+        <button class="icon-btn" title="نوتیفیکیشن" id="notifBtn">
+          🔔 <span class="dot" id="notifDot"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <section class="content">
+      <div class="grid">
+        <div class="card">
+          <div class="card__title">فروش امروز</div>
+          <div class="card__value" id="kpiSales">12,500,000</div>
+          <div class="card__meta">نسبت به دیروز: <b id="kpiSalesDelta">12%</b></div>
+        </div>
+
+        <div class="card">
+          <div class="card__title">سفارش‌های باز</div>
+          <div class="card__value" id="kpiOpenOrders">34</div>
+          <div class="card__meta">در انتظار بررسی</div>
+        </div>
+
+        <div class="card">
+          <div class="card__title">موجودی کم</div>
+          <div class="card__value" id="kpiLowStock">5</div>
+          <div class="card__meta">نیاز به تامین</div>
+        </div>
+
+        <div class="card">
+          <div class="card__title">مشتری جدید</div>
+          <div class="card__value" id="kpiNewCustomers">18</div>
+          <div class="card__meta">این هفته</div>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="panel">
+          <div class="panel__head">
+            <div class="panel__title">آخرین سفارش‌ها</div>
+            <button class="btn btn--primary" id="addOrderBtn">+ سفارش جدید</button>
+          </div>
+
+          <div class="table" id="ordersTable">
+            <div class="row row--head">
+              <div class="cell">کد</div>
+              <div class="cell">مشتری</div>
+              <div class="cell">مبلغ</div>
+              <div class="cell">وضعیت</div>
+            </div>
+
+            <div class="row">
+              <div class="cell">#10421</div>
+              <div class="cell">شرکت فولاد</div>
+              <div class="cell">3,200,000 تومان</div>
+              <div class="cell"><span class="pill pill--ok">پرداخت‌شده</span></div>
+            </div>
+
+            <div class="row">
+              <div class="cell">#10422</div>
+              <div class="cell">پتروشیمی</div>
+              <div class="cell">1,850,000 تومان</div>
+              <div class="cell"><span class="pill pill--warn">در انتظار</span></div>
+            </div>
+
+            <div class="row">
+              <div class="cell">#10423</div>
+              <div class="cell">پیمانکار X</div>
+              <div class="cell">980,000 تومان</div>
+              <div class="cell"><span class="pill pill--bad">لغو</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel__head">
+            <div class="panel__title">فعالیت‌ها</div>
+            <button class="btn btn--ghost" id="refreshBtn">رفرش</button>
+          </div>
+
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-body">
+                <div class="tl-title">ورود ادمین به سیستم</div>
+                <div class="tl-sub">۲ دقیقه پیش</div>
+              </div>
+            </div>
+
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-body">
+                <div class="tl-title">ثبت سفارش جدید #10422</div>
+                <div class="tl-sub">۱۰ دقیقه پیش</div>
+              </div>
+            </div>
+
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-body">
+                <div class="tl-title">به‌روزرسانی موجودی انبار</div>
+                <div class="tl-sub">۱ ساعت پیش</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+</div>
+
+<script src="./app.js"></script>
+</body>
+</html>

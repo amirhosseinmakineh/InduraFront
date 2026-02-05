@@ -1,20 +1,4 @@
-<!doctype html>
-<html lang="fa" dir="rtl" ng-app="dashboard">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dashboard UI</title>
-  <link rel="stylesheet" href="./dashboard.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.30/angular-ui-router.min.js"></script>
-    <script src="./dashboard/dashboard.controller.js"></script>
-    <script src="./dashboard/dashboard.rout.js"></script>
-    <script src="./dashboard/dashboard.service.js"></script>
-    <script src="./dashboard/dashboard.controller.js"></script>
-</head>
-<body ng-controller="dashboardController">
-
-<div class="dash" id="dash">
+<div class="dash" id="dash" ng-controller="dashboardController">
   <aside class="sidebar" id="sidebar">
     <div class="sidebar__brand">
       <div class="brand">
@@ -28,12 +12,12 @@
     </div>
 
     <nav class="sidebar__nav">
-      <button class="nav-item is-active" data-page="home">
+      <button class="nav-item" ui-sref="dashboard.home" ui-sref-active="is-active" ui-sref-active-eq>
         <span class="nav-item__icon">🏠</span>
         <span class="nav-item__text">خانه</span>
       </button>
 
-      <button class="nav-item" data-page="orders" ng-click="userManagment()">
+      <button class="nav-item" ng-click="userManagment()" ui-sref-active="is-active">
         <span class="nav-item__icon">🧾</span>
         <span class="nav-item__text">مدیریت کاربران</span>
       </button>
@@ -50,14 +34,11 @@
       <button class="btn btn--ghost" id="logoutBtn">خروج</button>
     </div>
   </aside>
-</div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.30/angular-ui-router.min.js"></script>
-<script src="../libs/angular-toastr.tpls.min.js"></script>
-<script src="./dashboard.module.js"></script>
-<script src="./dashboard.rout.js"></script>
-<script src="./dashboard.service.js"></script>
-<script src="./dashboard.controller.js"></script>
-</body>
-</html>
+  <main class="main">
+    <header class="topbar">
+      <div class="page-title__h">پنل مدیریت</div>
+    </header>
+    <section class="content" ui-view></section>
+  </main>
+</div>

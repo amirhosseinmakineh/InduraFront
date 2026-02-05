@@ -1,7 +1,6 @@
 angular.module('app', [
   'ui.router',
   'toastr',
-  'auth',
   'dashboard',
   'userManagment'
 ])

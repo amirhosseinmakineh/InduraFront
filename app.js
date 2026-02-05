@@ -1,4 +1,10 @@
-angular.module('app', ['ui.router', 'toastr', 'dashboard','userManagment'])
-  .config(['$urlRouterProvider', function ($urlRouterProvider) {
-    $urlRouterProvider.otherwise('/dashboard');
-  }]);
+angular.module('app', [
+  'ui.router',
+  'toastr',
+  'auth',
+  'dashboard',
+  'userManagment'
+])
+.config(function ($urlRouterProvider) {
+  $urlRouterProvider.otherwise('/login');
+});

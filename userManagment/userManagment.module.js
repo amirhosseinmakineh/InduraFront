@@ -1,1 +1,1 @@
-angular.module('userManagment',['toastr']);
+angular.module('userManagment',['toastr', 'ui.router']);

@@ -7,33 +7,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.30/angular-ui-router.min.js"></script>
 
-  <!-- Toastr -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-toastr/2.3.0/angular-toastr.tpls.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-toastr/2.3.0/angular-toastr.min.css" />
-</head>
 
-<body>
-  <div ui-view></div>
-
-  <script src="./app.js"></script>
-
-  <script src="./indexController.js"></script>
-  <script src="./index.Service.js"></script>
-
-  <!-- Dashboard -->
-  <script src="./dashboard/dashboard.module.js"></script>
-  <script src="./dashboard/dashboard.routes.js"></script>
-  <script src="./dashboard/dashboard.controller.js"></script>
-  <script src="./dashboard/dashboard.service.js"></script>
-
-  <!-- User Management -->
-  <script src="./userManagment/userManagment.module.js"></script>
-  <script src="./userManagment/userManagment.routes.js"></script>
-  <script src="./userManagment/userManagment.controller.js"></script>
-  <script src="./userManagment/userManagment.service.js"></script>
-  
   <style>
     body { font-family: sans-serif; background:#f1f1f1; display:flex; justify-content:center; align-items:flex-start; padding:50px 10px; }
     .container { background:#fff; padding:30px; width:100%; max-width:400px; box-shadow:0 0 10px rgba(0,0,0,0.1); border-radius:8px; }
@@ -47,7 +25,6 @@
     h2 { text-align:center; margin-bottom:20px; }
   </style>
 </head>
-
 <body ng-controller="indexController">
   <div class="container">
     <div class="tabs">
@@ -81,5 +58,19 @@
       </form>
     </div>
   </div>
+
+  <script src="./app.js"></script>
+  <script src="./indexController.js"></script>
+  <script src="./index.Service.js"></script>
+
+  <script src="./dashboard/dashboard.module.js"></script>
+  <script src="./dashboard/dashboard.rout.js"></script>
+  <script src="./dashboard/dashboard.controller.js"></script>
+  <script src="./dashboard/dashboard.service.js"></script>
+
+  <script src="./userManagment/userManagment.module.js"></script>
+  <script src="./userManagment/userManagment.rout.js"></script>
+  <script src="./userManagment/userMnagment.controller.js"></script>
+  <script src="./userManagment/userManagment.service.js"></script>
 </body>
 </html>

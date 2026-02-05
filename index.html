@@ -11,57 +11,24 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-toastr/2.3.0/angular-toastr.tpls.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-toastr/2.3.0/angular-toastr.min.css" />
+  <link rel="stylesheet" href="./dashboard/dashboard.css" />
+  <link rel="stylesheet" href="./userManagment/userManagment.css" />
 
   <style>
-    body { font-family: sans-serif; background:#f1f1f1; display:flex; justify-content:center; align-items:flex-start; padding:50px 10px; }
-    .container { background:#fff; padding:30px; width:100%; max-width:400px; box-shadow:0 0 10px rgba(0,0,0,0.1); border-radius:8px; }
-    .tabs { display:flex; margin-bottom:20px; }
-    .tabs button { flex:1; padding:10px; border:none; background:#eee; cursor:pointer; font-weight:bold; }
-    .tabs button.active { background:#007bff; color:#fff; }
-    .form-container { display:none; }
-    .form-container.active { display:block; }
-    input { width:100%; padding:10px; margin-top:5px; margin-bottom:15px; border:1px solid #ccc; border-radius:4px; }
-    button.submit { width:100%; padding:10px; background:#28a745; color:#fff; border:none; font-weight:bold; border-radius:4px; cursor:pointer; }
-    h2 { text-align:center; margin-bottom:20px; }
+    body { margin: 0; font-family: sans-serif; background: #f1f1f1; }
   </style>
 </head>
-<body ng-controller="indexController">
-  <div class="container">
-    <div class="tabs">
-      <button ng-click="showForm(true)" ng-class="{active: isLogin}">ورود</button>
-      <button ng-click="showForm(false)" ng-class="{active: !isLogin}">ثبت‌نام</button>
-    </div>
-
-    <div class="form-container" ng-class="{active: isLogin}">
-      <h2>ورود</h2>
-      <form ng-submit="login()">
-        <label>شماره همراه </label>
-        <input type="text" placeholder="شماره هممراه خود را وارد کنید" ng-model="loginModel.mobileNumber">
-
-        <label>رمز عبور</label>
-        <input type="password" placeholder="رمز عبور" ng-model="loginModel.password">
-
-        <button type="submit" class="submit">ورود</button>
-      </form>
-    </div>
-
-    <div class="form-container" ng-class="{active: !isLogin}">
-      <h2>ثبت‌نام</h2>
-      <form ng-submit="register()">
-        <label>نام کاربری</label>
-        <input type="text" placeholder="نام کاربری" ng-model="registerModel.userName">
-        <label>شماره همراه</label>
-        <input type="text" placeholder="شماره همراه" ng-model="registerModel.mobileNumber">
-        <label>رمز عبور</label>
-        <input type="password" placeholder="رمز عبور" ng-model="registerModel.password">
-        <button type="submit" class="submit">ثبت‌نام</button>
-      </form>
-    </div>
-  </div>
+<body>
+  <div ui-view></div>
 
   <script src="./app.js"></script>
+
   <script src="./indexController.js"></script>
-  <script src="./index.Service.js"></script>
+
+  <script src="./auth/auth.module.js"></script>
+  <script src="./auth/auth.route.js"></script>
+  <script src="./auth/auth.controller.js"></script>
+  <script src="./auth/auth.service.js"></script>
 
   <script src="./dashboard/dashboard.module.js"></script>
   <script src="./dashboard/dashboard.rout.js"></script>

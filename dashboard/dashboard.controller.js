@@ -2,11 +2,11 @@ angular.module('dashboard')
   .controller('dashboardController', ['$scope', '$state', 'DashboardService', 'toastr',
     function ($scope, $state, dashboardService, toastr) {
       $scope.userManagment = function () {
-        $state.transitionTo('/dashboard.userManagment');
+        $state.transitionTo('userManagment');
       };
 
       var init = function () {
-        debugger;
+        $state.go('home');
       };
 
       init();

@@ -1,61 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl" ng-app="dashboard">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./dashboard.css">
-  <script src="./dashboard.controller.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.30/angular-ui-router.min.js"></script>
+  <script src="../libs/angular-toastr.tpls.min.js"></script>
+
+  <script src="../userManagment/userManagment.module.js"></script>
+  <script src="../userManagment/userMnagment.controller.js"></script>
+  <script src="../userManagment/userManagment.service.js"></script>
+  <script src="../userManagment/userManagment.rout.js"></script>
+
+  <script src="./dashboard.module.js"></script>
   <script src="./dashboard.rout.js"></script>
   <script src="./dashboard.service.js"></script>
-  <script src="./dashboard.module.js"></script>
-  <title>Document</title>
+  <script src="./dashboard.controller.js"></script>
+
+  <title>Dashboard</title>
 </head>
 <body>
-  
-<div class="dash" id="dash" ng-controller="dashboardController">
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar__brand">
-      <div class="brand">
-        <div class="brand__logo">IN</div>
-        <div class="brand__text">
-          <div class="brand__title">Dashboard</div>
-          <div class="brand__sub">Indu Admin</div>
+  <div class="dash" id="dash" ng-controller="dashboardController">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar__brand">
+        <div class="brand">
+          <div class="brand__logo">IN</div>
+          <div class="brand__text">
+            <div class="brand__title">Dashboard</div>
+            <div class="brand__sub">Indu Admin</div>
+          </div>
         </div>
+        <button class="icon-btn" id="toggleBtn" title="جمع/باز">☰</button>
       </div>
-      <button class="icon-btn" id="toggleBtn" title="جمع/باز">☰</button>
-    </div>
 
-    <nav class="sidebar__nav">
-      <button class="nav-item" ui-sref="dashboard.home" ui-sref-active="is-active" ui-sref-active-eq>
-        <span class="nav-item__icon">🏠</span>
-        <span class="nav-item__text">خانه</span>
-      </button>
+      <nav class="sidebar__nav">
+        <button class="nav-item" ui-sref="home" ui-sref-active="is-active" ui-sref-active-eq>
+          <span class="nav-item__icon">🏠</span>
+          <span class="nav-item__text">خانه</span>
+        </button>
 
-      <button class="nav-item" ng-click="userManagment()" ui-sref-active="is-active">
-        <span class="nav-item__icon">🧾</span>
-        <span class="nav-item__text">مدیریت کاربران</span>
-      </button>
-    </nav>
+        <button class="nav-item" ng-click="userManagment()" ui-sref-active="is-active">
+          <span class="nav-item__icon">🧾</span>
+          <span class="nav-item__text">مدیریت کاربران</span>
+        </button>
+      </nav>
 
-    <div class="sidebar__footer">
-      <div class="user">
-        <div class="user__avatar">A</div>
-        <div class="user__info">
-          <div class="user__name">Amirhossein</div>
-          <div class="user__role">Admin</div>
+      <div class="sidebar__footer">
+        <div class="user">
+          <div class="user__avatar">A</div>
+          <div class="user__info">
+            <div class="user__name">Amirhossein</div>
+            <div class="user__role">Admin</div>
+          </div>
         </div>
+        <button class="btn btn--ghost" id="logoutBtn">خروج</button>
       </div>
-      <button class="btn btn--ghost" id="logoutBtn">خروج</button>
-    </div>
-  </aside>
+    </aside>
 
-  <main class="main">
-    <header class="topbar">
-      <div class="page-title__h">پنل مدیریت</div>
-    </header>
-    <section class="content" ui-view></section>
-  </main>
-</div>
- 
+    <main class="main">
+      <header class="topbar">
+        <div class="page-title__h">پنل مدیریت</div>
+      </header>
+      <section class="content" ui-view></section>
+    </main>
+  </div>
 </body>
 </html>

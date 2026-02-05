@@ -1,1 +1,1 @@
-angular.module('dashboard', ['toastr', 'ui.router']);
+angular.module('dashboard', ['toastr', 'ui.router', 'userManagment']);

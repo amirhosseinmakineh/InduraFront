@@ -1,6 +1,6 @@
 angular.module("app")
-  .controller("indexController", ['$scope','$state','IndexService','toastr',
-    function ($scope, $state, indexService, toastr) {
+  .controller("indexController", ['$scope','IndexService','toastr',
+    function ($scope, indexService, toastr) {
 
       $scope.isLogin = true;
 
@@ -24,7 +24,7 @@ angular.module("app")
         return indexService.login($scope.loginModel)
           .then(function (res) {
             toastr.success('ورود با موفقیت انجام شد');
-           $state.transitionTo('dashboard');
+            window.location.href = './dashboard/dashboard.html';
           })
           .catch(function (err) {
             toastr.error(err.data?.message || 'خطا در ورود');

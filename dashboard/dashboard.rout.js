@@ -1,22 +1,12 @@
 angular.module('dashboard')
-  .config(function ($stateProvider) {
+  .config(function ($stateProvider, $urlRouterProvider) {
+
+    $urlRouterProvider.otherwise('/dashboard');
 
     $stateProvider
-      .state('app', {
-        abstract: true,
-        templateUrl: 'dashboard/layout.html',
-        controller: 'dashboardController',
-        controllerAs: 'vm'
-      })
-      .state('app.dashboard', {
+      .state('home', {
         url: '/dashboard',
-        templateUrl: 'dashboard/home.html'
-      })
-      .state('app.userManagment', {
-        url: '/users',
-        templateUrl: 'userManagment/userManagment.html',
-        controller: 'UserManagmentController',
-        controllerAs: 'vm'
+        template: '<div class="panel"><div class="panel__head"><div class="panel__title">خانه</div></div><p>به داشبورد خوش آمدید.</p></div>'
       });
 
   });

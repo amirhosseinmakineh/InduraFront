@@ -1,11 +1,10 @@
 angular.module('userManagment')
   .config(function ($stateProvider) {
 
-    $stateProvider.state('app.userManagment', {
+    $stateProvider.state('userManagment', {
       url: '/users',
       templateUrl: 'userManagment/userManagment.html',
-      controller: 'UserManagmentController',
-      controllerAs: 'vm'
+      controller: 'userManagmentController'
     });
 
   });

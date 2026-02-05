@@ -1,0 +1,17 @@
+<div class="container" style="background:#fff; padding:30px; width:100%; max-width:400px; box-shadow:0 0 10px rgba(0,0,0,0.1); border-radius:8px; margin: 60px auto;">
+  <h2 style="text-align:center; margin-bottom:20px;">ثبت‌نام</h2>
+  <form ng-submit="register()">
+    <label>نام کاربری</label>
+    <input type="text" placeholder="نام کاربری" ng-model="registerModel.userName" style="width:100%; padding:10px; margin-top:5px; margin-bottom:15px; border:1px solid #ccc; border-radius:4px;">
+
+    <label>شماره همراه</label>
+    <input type="text" placeholder="شماره همراه" ng-model="registerModel.mobileNumber" style="width:100%; padding:10px; margin-top:5px; margin-bottom:15px; border:1px solid #ccc; border-radius:4px;">
+
+    <label>رمز عبور</label>
+    <input type="password" placeholder="رمز عبور" ng-model="registerModel.password" style="width:100%; padding:10px; margin-top:5px; margin-bottom:15px; border:1px solid #ccc; border-radius:4px;">
+
+    <button type="submit" style="width:100%; padding:10px; background:#28a745; color:#fff; border:none; font-weight:bold; border-radius:4px; cursor:pointer;">ثبت‌نام</button>
+  </form>
+
+  <p style="text-align:center; margin-top:15px;">قبلاً ثبت‌نام کردید؟ <a ui-sref="login">ورود</a></p>
+</div>

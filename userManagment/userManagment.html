@@ -1,8 +1,52 @@
-<div ng-controller="userManagmentController">
-<div class="panel">
-  <div class="panel__head">
-    <div class="panel__title">مدیریت کاربران</div>
-  </div>
-  <p>این بخش داخل لایه داشبورد نمایش داده می‌شود.</p>
-</div>
+<div class="dash">
+  <main class="main" style="width:100%">
+    <header class="topbar">
+      <div class="page-title__h">مدیریت کاربران</div>
+      <a class="btn" ui-sref="dashboard">بازگشت به داشبورد</a>
+    </header>
+
+    <section class="content">
+      <div class="panel">
+        <div class="panel__head">
+          <div class="panel__title">لیست کاربران</div>
+        </div>
+
+        <table class="user-table">
+          <thead>
+            <tr>
+              <th>نام کاربری</th>
+              <th>شماره همراه</th>
+              <th>نقش</th>
+              <th>عملیات</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="user in users track by user.id">
+              <td>
+                <span ng-if="editingId !== user.id">{{user.userName}}</span>
+                <input ng-if="editingId === user.id" ng-model="editModel.userName" />
+              </td>
+              <td>
+                <span ng-if="editingId !== user.id">{{user.mobileNumber}}</span>
+                <input ng-if="editingId === user.id" ng-model="editModel.mobileNumber" />
+              </td>
+              <td>
+                <span ng-if="editingId !== user.id">{{user.role}}</span>
+                <select ng-if="editingId === user.id" ng-model="editModel.role">
+                  <option value="Admin">Admin</option>
+                  <option value="User">User</option>
+                </select>
+              </td>
+              <td>
+                <button ng-if="editingId !== user.id" class="btn btn--primary" ng-click="startEdit(user)">آپدیت</button>
+                <button ng-if="editingId === user.id" class="btn btn--primary" ng-click="saveEdit()">ذخیره</button>
+                <button ng-if="editingId === user.id" class="btn" ng-click="cancelEdit()">انصراف</button>
+                <button class="btn" ng-click="deleteUser(user.id)">حذف</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
 </div>

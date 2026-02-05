@@ -1,0 +1,14 @@
+<div class="container" style="background:#fff; padding:30px; width:100%; max-width:400px; box-shadow:0 0 10px rgba(0,0,0,0.1); border-radius:8px; margin: 60px auto;">
+  <h2 style="text-align:center; margin-bottom:20px;">ورود</h2>
+  <form ng-submit="login()">
+    <label>شماره همراه</label>
+    <input type="text" placeholder="شماره همراه خود را وارد کنید" ng-model="loginModel.mobileNumber" style="width:100%; padding:10px; margin-top:5px; margin-bottom:15px; border:1px solid #ccc; border-radius:4px;">
+
+    <label>رمز عبور</label>
+    <input type="password" placeholder="رمز عبور" ng-model="loginModel.password" style="width:100%; padding:10px; margin-top:5px; margin-bottom:15px; border:1px solid #ccc; border-radius:4px;">
+
+    <button type="submit" style="width:100%; padding:10px; background:#28a745; color:#fff; border:none; font-weight:bold; border-radius:4px; cursor:pointer;">ورود</button>
+  </form>
+
+  <p style="text-align:center; margin-top:15px;">حساب ندارید؟ <a ui-sref="register">ثبت‌نام</a></p>
+</div>

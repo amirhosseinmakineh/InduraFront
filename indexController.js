@@ -24,7 +24,7 @@ angular.module("app")
         return indexService.login($scope.loginModel)
           .then(function (res) {
             toastr.success('ورود با موفقیت انجام شد');
-            window.location.href = './dashboard/index.html#/dashboard';
+            window.location.href = './dashboard/dashboard.html';
           })
           .catch(function (err) {
             toastr.error(err.data?.message || 'خطا در ورود');

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" ng-app="dashboard">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -12,7 +12,7 @@
     <script src="./dashboard/dashboard.service.js"></script>
     <script src="./dashboard/dashboard.controller.js"></script>
 </head>
-<body>
+<body ng-controller="dashboardController">
 
 <div class="dash" id="dash">
   <aside class="sidebar" id="sidebar">
@@ -52,5 +52,12 @@
   </aside>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.30/angular-ui-router.min.js"></script>
+<script src="../libs/angular-toastr.tpls.min.js"></script>
+<script src="./dashboard.module.js"></script>
+<script src="./dashboard.rout.js"></script>
+<script src="./dashboard.service.js"></script>
+<script src="./dashboard.controller.js"></script>
 </body>
 </html>

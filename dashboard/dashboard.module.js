@@ -1,1 +1,1 @@
-angular.module('dashboard', ['toastr']);
+angular.module('dashboard', ['toastr', 'ui.router']);

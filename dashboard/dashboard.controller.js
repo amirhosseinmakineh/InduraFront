@@ -1,4 +1,13 @@
 angular.module('dashboard')
-.controller('dashboardController', ['$scope','DashboardService','toastr',
-  function ($scope, dashboardService, toastr) {
+.controller('dashboardController', ['$scope','$state','DashboardService','toastr',
+  function ($scope, $state, dashboardService, toastr) {
+    $scope.userManagment = function(){
+      debugger;
+      $state.go('userManagment');
+    }
+
+    var init = function(){
+debugger;
+    }
+    init();
   }])
